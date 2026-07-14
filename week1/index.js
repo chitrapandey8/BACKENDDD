@@ -36,3 +36,39 @@
 //creating threads is not expensive, threads share alot of process.
 //how threads are lightweights?
 //imporoving capavlibities -- verticall scaling more cores.
+
+//What is threading behaviour of node?
+
+//apche, NGINX is web server-- web server delivers static contents, while applicatin server is for dynamic contenst
+//early apache used to create a new process to handle new request
+//later improvements happned apache improved it by intoducing a single per request instead of a whole process.
+//NGINX worked on an non blocking event driven architecture (very close to what nodejs does).
+
+
+//what we we encounter biilions ofr eequest we cant be just creting biilions of process
+
+///what neginx does that we dont create process for every process, what it does instead, we limit the no of processes we have , it has a master process, and worker process which does not create new new process, 
+//ngnix ensures if we have x number of cores , then it will create x no of wroker process. each worker process is a single threaded , woker process emit an new event upon reciving a request.
+
+//high I/O vc High Processing
+
+//i/O -- reading files, making network requests.
+//high processing -- needs gpus like traing a ml model
+
+
+//some request can be hight IO, 
+//some operations in nodejs works on multi threads , some on single threads.
+
+//node js has LIBUV---aagr do core hai toh nodeja js do request keliye do thread banayega ek single core ko dega
+//libuv create a pool threads, intilly it has 4, 2 for one core,  but we can increae it , for high processing nodejs rely on lubuv
+//libuv allows nodejs to be single thrread yet handle thousands of concureentn operation.
+//high processing uses thrreads pooling, i/o not uses thres pooling.
+
+///libuv libarary --powers async processing in nodejs.
+//file i/o & simlar operation -- for exaple libuv has fs libaary
+//a pool of worker threads to handle thread specfic cpu tasks.
+//facilitates creation of child process
+//provides fully functional event loop.
+
+//libuv has handles && requests in libuv--- long live object used for async operations like , these stays in memeory , unless explicity closed(persist object), 
+//requests in libuv -- short lived objects (exist only till the duration of operation).
