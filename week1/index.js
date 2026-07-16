@@ -70,5 +70,24 @@
 //facilitates creation of child process
 //provides fully functional event loop.
 
+
+
 //libuv has handles && requests in libuv--- long live object used for async operations like , these stays in memeory , unless explicity closed(persist object), 
 //requests in libuv -- short lived objects (exist only till the duration of operation).
+
+//How the event loop in nodejs works
+//----Promises
+//----
+//----
+//a tick is nodejs to excution of a microtask before the next iteration of the loop starts. one complete excution of event loop/
+//event loop checks nextqueue first then, micro, macro task queue
+//process.nexttick -- gets callback gets excuted before next tick.
+
+//macro task contians multiple queues
+///macro queue checks first timers first liek settimot/setinterval it maintians a timer queue as seperate, timer queue is minheap
+//callbacks in microtask qeue is excuted after the micro task queue.
+//second after timer is i/o queue.
+//poll
+//afater i/o there is pooling then there is check queue then close queue. -- close quee when u have to close any callback
+
+
