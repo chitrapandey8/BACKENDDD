@@ -88,6 +88,8 @@
 //callbacks in microtask qeue is excuted after the micro task queue.
 //second after timer is i/o queue.
 //poll
-//afater i/o there is pooling then there is check queue then close queue. -- close quee when u have to close any callback
+//afater i/o there is pooling then there is check queue then close queue. -- close quee when u have to close any callback.
+
+
 
 
